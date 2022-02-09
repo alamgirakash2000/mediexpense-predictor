@@ -1,0 +1,74 @@
+.main {
+  margin: 0;
+
+  background-image: url("https://i.imgur.com/1EzyZvj.png");
+  background-position: center;
+  background-size: cover;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  text-align: center;
+  background: rgba(101, 204, 88, 0.774);
+  color: black;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px teal;
+  margin-bottom: 1rem;
+}
+.form__sides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__left {
+  text-align: left;
+  margin-right: 1.5rem;
+}
+
+.form__right {
+  text-align: left;
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.form__field h5 {
+  margin: 0;
+}
+
+.form__field input {
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.click_here {
+  padding: 0.3rem 1rem;
+  background: green;
+  border-radius: 5px;
+}
+
+.submit_btn {
+  padding: 0.7rem 2rem;
+  background: greenyellow;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .form__sides {
+    display: flex;
+    flex-direction: column;
+  }
+}
