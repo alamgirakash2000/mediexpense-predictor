@@ -9,8 +9,8 @@ import {
 import axios from "../components/Axios";
 
 const Basic = ({ setExpense, handleOpen }) => {
-  const [age, setAge] = useState();
-  const [bmi, setBmi] = useState();
+  const [age, setAge] = useState(20);
+  const [bmi, setBmi] = useState(30);
   const [sex, setSex] = useState("1");
   const [smoker, setSmoker] = useState(0);
   const [children, setChildren] = useState(0);

@@ -17,5 +17,6 @@ Training Loss and Test Loss
 
 - This machine learning model is created with the Multiple Variable linear
   regression algorithm.
-- This frontend is created with React and Next js framework
-- The RESTful api backend is created with Python Flask Framework
+- This frontend is created with React and Next js framework deployed on Vercel
+- The RESTful api backend is created with Python Flask Framework deployed on
+  heroku
