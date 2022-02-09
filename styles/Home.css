@@ -6,7 +6,7 @@
   background-size: cover;
 }
 .overlay {
-  background-color: rgba(0, 0, 0, 0.836);
+  background-color: rgba(0, 0, 0, 0.911);
   min-height: 100vh;
   padding: 2rem;
   color: white;
@@ -17,11 +17,11 @@
 
 .form {
   text-align: center;
-  background: rgba(101, 204, 88, 0.774);
+  background: rgba(183, 247, 174, 0.774);
   color: black;
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px teal;
+  box-shadow: 5px 5px 10px rgb(71, 168, 168);
   margin-bottom: 1rem;
 }
 .form__sides {
@@ -50,6 +50,10 @@
 .form__field input {
   padding: 0.3rem;
   border-radius: 5px;
+}
+
+.form__field select {
+  padding: 0.3rem;
 }
 
 .click_here {

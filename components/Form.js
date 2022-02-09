@@ -24,7 +24,6 @@ const Basic = ({ setExpense, handleOpen }) => {
       console.log("Input all the information correctly");
       return false;
     }
-    handleOpen();
     let numeric_region = region.split(",").map((data) => parseInt(data));
 
     let data = await [
@@ -38,12 +37,14 @@ const Basic = ({ setExpense, handleOpen }) => {
 
     console.log(data);
 
-    //  await axios
-    //    .post(`/`, { data: data })
-    //    .then((response) => {
-    //      console.log(response.data);
-    //    })
-    //    .catch((error) => alert(error.message));
+    await axios
+      .post(`/`, { data: data })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => alert(error.message));
+
+    handleOpen();
   };
 
   return (
