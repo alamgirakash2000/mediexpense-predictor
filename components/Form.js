@@ -13,18 +13,29 @@ const Basic = ({ setExpense, handleOpen }) => {
   const [bmi, setBmi] = useState();
   const [sex, setSex] = useState("1");
   const [smoker, setSmoker] = useState(0);
-  const [children, setChildren] = useState();
-  const [region, setRegion] = useState([0, 0, 0, 1]);
+  const [children, setChildren] = useState(0);
+  const [region, setRegion] = useState(1);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const conditions = age && bmi && children;
+    const conditions = age && bmi;
 
     if (!conditions) {
       console.log("Input all the information correctly");
       return false;
     }
-    let numeric_region = region.split(",").map((data) => parseInt(data));
+
+    let numeric_region;
+
+    if (region == 1) {
+      numeric_region = [1, 0, 0, 0];
+    } else if (region == 2) {
+      numeric_region = [0, 1, 0, 0];
+    } else if (region == 3) {
+      numeric_region = [0, 0, 1, 0];
+    } else if (region == 4) {
+      numeric_region = [0, 0, 0, 1];
+    }
 
     let data = await [
       parseInt(age),
@@ -35,12 +46,11 @@ const Basic = ({ setExpense, handleOpen }) => {
       ...numeric_region,
     ];
 
-    console.log(data);
-
     await axios
-      .post(`/`, { data: data })
+      .post("/", { data: data })
       .then((response) => {
-        console.log(response.data);
+        let expense = parseFloat(response.data.expense).toFixed(2);
+        setExpense(expense);
       })
       .catch((error) => alert(error.message));
 
@@ -134,10 +144,10 @@ const Basic = ({ setExpense, handleOpen }) => {
               <select
                 value={region}
                 onChange={(e) => setRegion(e.target.value)}>
-                <option value={[0, 0, 0, 1]}>Southwest</option>
-                <option value={[0, 1, 0, 0]}>Northwest</option>
-                <option value={[1, 0, 0, 0]}>Northeast</option>
-                <option value={[0, 0, 1, 0]}>Southeast</option>
+                <option value={4}>Southwest</option>
+                <option value={2}>Northwest</option>
+                <option value={1}>Northeast</option>
+                <option value={3}>Southeast</option>
               </select>
             </div>
           </div>
